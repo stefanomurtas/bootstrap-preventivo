@@ -61,7 +61,7 @@ function calcoloCosto() {
     if (lavoroTipo === "frontend") {
         pagaOraria = 22.50;
         // logica 2(se il lavoro selezionato è backend l'importo sarà ..)
-    } else if (lavoroTipo === "backEnd") {
+    } else if (lavoroTipo === "backend") {
         pagaOraria = 15.30;
         // logica 3 (se il lavoro selezionato è analisiProgettuale l'importo sarà ..)
     } else if (lavoroTipo === "analisiProgettuale") {
