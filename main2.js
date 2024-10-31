@@ -68,15 +68,15 @@ function calcoloCosto() {
         pagaOraria = 33.60;
         // logica 4 (nel caso nela quale non fosse stato selezionata nessuna delle 3 messaggio "selezionare un tipo di lavoro anzichè il risulato")
     } else {
-        document.getElementById("risultato").innerHTML = "selezionare un tipo di lavoro";
-        return;
+        window.alert("selezionare un tipo di lavoro")
     }
     // creata nuova variabile per contenere il risulato della moltiplicazione tra ore e tipo lavoro selezionato
     const spesaTotale = oreLavoro * pagaOraria;
     // riceercare il risultato nel html e creare il risultato al suo interno
-    document.getElementById("risultato").innerText = `il totale è €${spesaTotale.toFixed(2)}`;
+    document.getElementById("risultato").innerText = ` €${spesaTotale.toFixed(2)}`;
 
 
 }
+
 
 
