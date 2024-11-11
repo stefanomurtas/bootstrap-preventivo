@@ -1,69 +1,18 @@
-function usePromotionalCode() {
-    const promtionalCodeValue = $('#nomeUtente').value;
-     const tipoLavoroVAlue= $('#tipoLavoro').value;
-}
-
-// 1prendo valore codice promozionale
-// 2 prendo tipo di lavoro
-// 3 tarifa base  a seconda lavoro
 
 
-//  creare condizione per dare il valore di prezzo al tipo di lavoro
-// aggiungere valore per il numero delle ore che in questo caso sarà 10 
-// aggiungere tutte variabili che potrebbero essere scelte dal cliente
-let sviluppoBackend = 22.50;
-let sviluppoFrontend = 15.30;
-let analisiProgett = 33.60;
-
-// const oreLavoro = 10
-// document.getElementById('tipoLavoro').addEventListener('click', function sceltaLavoro() {
-//     const tipoLavoroValue = ('')
-
-//     if (tipoLavoroValue === "backend") {
-//         tipoLavoroValue = sviluppoBackend * oreLavoro;
-//         alert("prova")
-//     } else if (tipoLavoroValue === "frontend") {
-//         tipoLavoroValue = sviluppoFrontend * oreLavoro;
-//         alert("prova")
-
-
-//     } else (tipoLavoroValue === "analisiProgettuale"){
-//         tipoLavoroValue = analisiProgett * oreLavoro
-//         alert("prova")
-
-//     }
-
-// })
-// console.log = (tipoLavoroValue)
-
-
-
-// prova
-
-
-// function Modulo() {
-// let nome= document.getElementById("nomeUtente").value;
-
-
-// if ((nome == "") || (nome == "undefined")) {
-//     alert("Il campo Nome è obbligatorio.");
-//     document.modulo.nome.focus();
-//     return false;
-//     }
-// }
-
+// assegnato a formCalcolo l'id del form
 const formCalcolo= document.getElementById("calcolo");
-
-
-
-document.getElementById("calcolo").addEventListener('click', function (event){
+// all'id assegno l'evento dopo il click sul bottone la funzione che mi permette di non riagiornare la pagina
+document.getElementById("calcolo").addEventListener('submit', function (event){
 
     event.preventDefault();
 
  calcoloCosto() 
 
-})
+ scontoPrezzo()
 
+
+});
 
 function calcoloCosto() {
     
@@ -85,10 +34,29 @@ function calcoloCosto() {
         pagaOraria = 33.60;
         // logica 4 (nel caso nela quale non fosse stato selezionata nessuna delle 3 messaggio "selezionare un tipo di lavoro anzichè il risulato")
     } else {
-        window.alert("selezionare un tipo di lavoro")
+        window.alert("selezionare un tipo di lavoro");
+        return;
+
     }
     // creata nuova variabile per contenere il risulato della moltiplicazione tra ore e tipo lavoro selezionato
     const spesaTotale = oreLavoro * pagaOraria;
     // riceercare il risultato nel html e creare il risultato al suo interno
-    document.getElementById("risultato").innerText = ` €${spesaTotale.toFixed(2)}`;
+    document.getElementById("risultato").innerText = ` Il totale è €${spesaTotale.toFixed(2)}`;
+}
+
+
+
+function scontoPrezzo(){
+
+const codPromzionale= document.getElementById("codPromo").value;
+let prezzoScontato=parseFloat( document.getElementById("risultato").innerText);
+ const codiciSc =[ "YHDNU32" , " JANJC63" , "SJDP096" ] ;
+ let prezzoFinale =prezzoScontato;
+
+if (codiciSc.includes(codPromzionale)){
+
+  prezzoFinale= prezzoScontato* 0.75;
+    
+}
+document.getElementById("risultato").innerText = ` il totale è €${prezzoFinale.toFixed(2)}`
 }

@@ -81,6 +81,10 @@
     
 
 // }
+
+
+
+
 // assegnato a formCalcolo l'id del form
 const formCalcolo= document.getElementById("calcolo");
 // all'id assegno l'evento dopo il click sul bottone la funzione che mi permette di non riagiornare la pagina
@@ -123,3 +127,18 @@ function calcoloCosto() {
     document.getElementById("risultato").innerText = ` €${spesaTotale.toFixed(2)}`;
 }
 })
+
+// codice promozionale(bonus)
+
+const codiciSc =[ "YHDNU32" , " JANJC63" , "SJDP096"];
+const codPromzionale= document.getElementById("codPromo").value
+
+let prezzoScontato= '';
+
+if (codiciSc.includes(codPromzionale)){
+
+    prezzoScontato= spesaTotale*=0.75;
+    
+
+}
+document.getElementById("risultato").innerText = ` €${prezzoScontato.toFixed(2)}`;
