@@ -43,7 +43,7 @@ function calcoloCosto() {
     //   costante codice promozionale deve contenere l'id html per giungere al collegamento
     const codPromzionale = document.getElementById("codPromo").value;
     // codice sconto validi
-    const codiciSc = ["YHDNU32", " JANJC63", "SJDP096"];
+    const codiciSc = ["YHDNU32", " JANJC63", "SJDP096" ,"PWKCN25","POCIE24"];
     // creato nuova variabile contenente il valore totale del calcolo precedente
     let prezzoFinale = spesaTotale;
     // logica nella quale si ricerca nella input text un codice contenuto nell' array (doppia condizione per fare in modo che anche nel momento nella quale non fosse inserito il codice sconto il calcolo non si blocchi)
@@ -60,7 +60,7 @@ function calcoloCosto() {
         }
     }
     // riceercare il risultato nel html e creare il risultato al suo interno
-    document.getElementById("risultato").innerText = ` il totale è €${prezzoFinale.toFixed(2)}`;
+    document.getElementById("risultato").innerText = `  Prezzo finale €${prezzoFinale.toFixed(2)}`;
 
 }
 
