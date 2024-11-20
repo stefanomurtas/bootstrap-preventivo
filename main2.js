@@ -59,8 +59,9 @@ function calcoloCosto() {
 
         }
     }
-    // riceercare il risultato nel html e creare il risultato al suo interno
-    document.getElementById("risultato").innerText = `  Prezzo finale €${prezzoFinale.toFixed(2)}`;
+
+    // riceercare il risultato nel html e creare il risultato al suo interno , aggiunto \n per scendere a capo
+    document.getElementById("risultato").innerText = `  Prezzo finale\n €  ${prezzoFinale.toFixed(2)}`;
 
 }
 
